@@ -63,5 +63,26 @@ class DemoController extends Controller
     {
         return $this->render('index');
     }
+/**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionEdit()
+    {
+        if(Yii::$app->request->isPost()){
+            $checkSuccess = true;
+            // lu du lieu db
+            if(!checkSuccess){
 
+                return $this->render('edit');
+            }else{
+                
+                return $this->redirect('index');
+            }
+            
+        }
+
+        return $this->render('edit');
+    }
 }
